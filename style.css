@@ -3,22 +3,71 @@
     list-style: none;
     margin: 0;
     box-sizing: border-box;
+    font-size: 18px;
 }
 
 body{
     background-color: rgb(26, 26, 26);
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
 }
 
+#device{
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    width: 35rem;
+    padding: 5% 0% 8%;
+    background-color: rgb(158, 54, 158);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    border: 5px solid black;
+}
+
+/* title */
+h1{
+    font-size: 1em;
+    align-self: center;
+    margin: 5% 0 2% 0;
+}
+/*buttons*/
 ul{
     display: flex;
-    padding: 0 15% 5%;
-    justify-content: space-around;
+    width: 80%;
+    height: 4em;
+    justify-content: center;
+    align-content: center;
+    align-self: center;
+    padding: 0;
+    margin: 5% 0;
+    gap: 8%;
 }
 
-h1{
+button{
+    height: 4em;
+    width: 4em;
+    border-radius: 10px;
+}
+
+button>img{
+    height: 2em;
+    width: 2em;
     align-self: center;
-    font-size: 1em;
-    padding: 4%;
+    margin: 2%;
+}
+
+#display{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 80%;
+    align-self: center;
+    border-radius: 20px;
+    background-color: #6ebebe;
+    border: 2px solid rgb(46, 46, 46);
+    align-items: center;
+    
 }
 
 /* Stats bars*/
@@ -31,6 +80,10 @@ h1{
     justify-content: space-between;
     justify-items: end;
     gap: 5%;
+}
+
+.title{
+    font-size: 0.8rem;
 }
 
 .bar{
@@ -48,65 +101,16 @@ h1{
     align-content: center;
 }
 .number{
-    font-size: 10px;
     margin-top: 5%;
 }
 
-/**/
-img{
-    max-width: 90%;
-    max-height: 90%;
-    padding: 3% 8%;
-    align-self: center;
-}
-
-button{
-    height: 100%;
-    width: 80%;
-    padding: 10%;
-    border-radius: 20px;
-    align-self: center;
-    justify-content: space-evenly;
-}
-
-button:active{
-    background-color: gray;
-    box-shadow: inset;
-}
-
-p{
-    font-size: 0.5em;
+#display>img{
+    height:10em;
     margin-bottom: 5%;
+}
+
+#text{
+    margin: 5% 2%;
     text-align: center;
 }
 
-.button{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-}
-
-#device{
-    display: flex;
-    flex-direction: column;
-    width: 45%;
-    height: 90%;
-    margin:  10% 35%;
-    padding: 5% 0% 8%;
-    background-color: rgb(158, 54, 158);
-    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-    border: 5px solid black;
-}
-
-#display{
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    height: 70%;
-    align-self: center;
-    border-radius: 20%;
-    background-color: #6ebebe;
-    border: 2px solid rgb(46, 46, 46);
-    align-items: center;
-    
-}

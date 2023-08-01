@@ -1,0 +1,45 @@
+
+ul{
+    display: flex;
+    height: 20px;
+    justify-content: space-around;
+}
+button{
+    height: 100%;
+    width: 80%;
+    padding: 10%;
+    border-radius: 20px;
+    align-self: center;
+}
+
+button:active{
+    background-color: gray;
+    box-shadow: inset;
+}
+
+button>img{
+    height: 100%;
+}
+
+h1{
+    align-self: center;
+    padding: 4%;
+}
+
+
+/**/
+
+p{
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+img{
+    padding: 3% 8%;
+}
+
+.button{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}

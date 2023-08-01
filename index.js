@@ -26,7 +26,7 @@ function initPet(pet) {
     sleep: function () {
       if (energy <= 80) {
         clearInterval(timePass);
-        petImage.src = 'assests/dog_sleep.png';
+        petImage.src = 'assests/dog_sleep.gif';
         petMessage.textContent = `${petName} is sleeping`;
         status = "sleeping";
         age++;
@@ -39,12 +39,12 @@ function initPet(pet) {
           status,
         };
       } else if (status === 'sleeping') {
-        petImage.src = 'assests/dog_start.png';
+        petImage.src = 'assests/dog_start.gif';
         petMessage.textContent = "I just slept";
         petEnergy.textContent = energy;
         return energy;
       } else {
-        petImage.src = 'assests/dog_start.png';
+        petImage.src = 'assests/dog_start.gif';
         petMessage.textContent = "I don't need to sleep";
         petEnergy.textContent = energy
         return energy;
@@ -52,7 +52,7 @@ function initPet(pet) {
     },
     play: function () {
       if (energy > 30) {
-        petImage.src = 'assests/dog_play.png';
+        petImage.src = 'assests/dog_play.gif';
         petMessage.textContent = `${petName} is running`;
         status = "running";
         age++;
@@ -64,14 +64,14 @@ function initPet(pet) {
           status,
         }
       } else {
-        petImage.src = 'assests/dog_start.png';
+        petImage.src = 'assests/dog_start.gif';
         petMessage.textContent = "I'm tired";
       }
       ;
     },
     eat: function () {
       if (status !== 'eating' && energy <= 90) {
-        petImage.src = 'assests/dog_eat.png';
+        petImage.src = 'assests/dog_eat.gif';
         petMessage.textContent = `${petName} is eating`;
         status = "eating";
         age++;
@@ -83,12 +83,12 @@ function initPet(pet) {
           status,
         };
       } else if (energy <= 90) {
-        petImage.src = 'assests/dog_start.png';
+        petImage.src = 'assests/dog_start.gif';
         petMessage.textContent = "I'm full";
         petEnergy.textContent = energy
         return energy;
       } else {
-        petImage.src = 'assests/dog_start.png';
+        petImage.src = 'assests/dog_start.gif';
         petMessage.textContent = "I just ate";
         petEnergy.textContent = energy
         return energy;
@@ -114,5 +114,4 @@ let sleeping = setInterval(() => {
   petEnergy.textContent = energy
 }, 1000);
 
-timePass;
 
