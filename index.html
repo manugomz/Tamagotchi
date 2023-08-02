@@ -11,10 +11,34 @@
     <title>Tamagotchi</title>
 </head>
 <body>
-    <div>
-
+    <div class="selector-window">
+        <h1 id="selector-title">Select your pet</h1>
+        <p>Type</p>
+        <div id="pet-options">
+            <div class="pet-option chosen" id="dog">
+                <img src="./assests/dog/dog-start.gif">
+                <p>Dog</p>
+            </div>
+            <div class="pet-option" id="cat">
+                <img src="./assests/cat/cat-start.gif">
+                <p>Cat</p>
+            </div>
+            <div class="pet-option" id="sheep">
+                <img src="./assests/sheep/sheep-start.gif">
+                <p>Sheep</p>
+            </div>
+            <div class="pet-option" id="ostrich">
+                <img src="./assests/ostrich/ostrich-start.gif">
+                <p>Duck?</p>
+            </div>
+        </div>
+        <div id="pet-name-form">
+            <p>Pet name:</p>
+            <input type="text" id="pet-name" />
+        </div>
+        <button id="continue">Continue</button>
     </div>
-    <div id="device" hidden>
+    <div class="device hidden">
         <h1>Tamagotchi</h1>
         <ul>
             <li id="button-sleep" class="button"><button><img src="assests/sleep.png" alt="sleep"></button></li>
@@ -37,10 +61,11 @@
                         </div>
                 </div>
             </div>
-            <img id="image" src="assests/dog_start.gif" alt="">
+            <img id="image" src="assests/dog/dog-start.gif" alt="">
             <p id="text"></p>
         </div>
     </div>
+    <button class="restart">Restart game</button>
     <script src="index.js"></script>
 </body>
 </html>

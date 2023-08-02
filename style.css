@@ -1,28 +1,39 @@
+:root{
+    --screen:#E8FFC2;
+    --device:#2FA4FF;
+    --dark:#0E185F;
+    --highlight:#0fac97;
+    --border:rgb(65,65,65);
+}
+
 *{
+    box-sizing: border-box;
     font-family:'Press Start 2P';
     list-style: none;
     margin: 0;
-    box-sizing: border-box;
     font-size: 18px;
 }
 
 body{
-    background-color: rgb(26, 26, 26);
     display: flex;
+    flex-direction: column;
     height: 100vh;
     width: 100vw;
     justify-content: center;
+    background-color: rgb(26, 26, 26);
 }
 
-#device{
+.device{
+    transition: 1s;
     display: flex;
     align-self: center;
     flex-direction: column;
     width: 35rem;
     padding: 5% 0% 8%;
-    background-color: rgb(158, 54, 158);
+    margin:0 5%;
+    background-color: var(--device);
     border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
-    border: 5px solid black;
+    border: 5px solid var(--dark);
 }
 
 /* title */
@@ -50,24 +61,28 @@ button{
     border-radius: 10px;
 }
 
+button:active{
+    background-color: gray;
+    box-shadow: inset;
+}
+
 button>img{
     height: 2em;
     width: 2em;
     align-self: center;
     margin: 2%;
 }
-
+/*--------------------------Screen------------------------*/
 #display{
     display: flex;
     flex-direction: column;
-    width: 70%;
-    height: 80%;
+    width: 60%;
     align-self: center;
-    border-radius: 20px;
-    background-color: #6ebebe;
-    border: 2px solid rgb(46, 46, 46);
     align-items: center;
-    
+    border: 2px solid var(--border);
+    border-radius: 20px;
+    background-color: var(--screen);
+    margin-bottom: 5%;
 }
 
 /* Stats bars*/
@@ -100,6 +115,7 @@ button>img{
     justify-content: center;
     align-content: center;
 }
+
 .number{
     margin-top: 5%;
 }
@@ -113,4 +129,123 @@ button>img{
     margin: 5% 2%;
     text-align: center;
 }
+
+/*-----------------Pet selector-----------------------*/
+.selector-window{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--screen);
+    width: 50%;
+    height: 80%;
+    align-self: center;
+    border-radius: 20px;
+    border: 3px solid var(--border);
+    margin-top: 2%;
+}
+
+#selector-title{
+    width: 100%;
+    text-align: center;
+    font-size: 1.25em;
+    margin-top: 6%;
+    text-transform:uppercase;
+}
+
+.selector-window>p{
+    margin: 5% 0 3% 0%;
+    align-self: center;
+}
+
+#pet-options{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0% 5%;
+    padding: 2%;
+    background-color: var(--highlight);
+    border-radius: 10px;
+    border: 3px solid var(--border);
+}
+
+.pet-option{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    border: 3px solid var(--border);
+    background-color: aliceblue;
+    padding-bottom: 2%;
+    box-shadow: 2px 5px 5px black;
+    cursor: pointer;
+}
+
+.pet-option:hover{
+    background-color: var(--border);
+    color: white;
+}
+
+.pet-option:active{
+    background-color: rgba(100, 100, 100, 0.763);
+    box-shadow: 2px 5px 5px black inset;
+}
+
+.chosen{
+    background-color: rgba(60, 60, 60, 0.989);
+    box-shadow: 1px 1px 5px rgb(0, 0, 0) inset;
+    color: aliceblue;
+}
+
+.pet-option>img{
+    height: 5em;
+}
+
+#pet-name-form{
+    display: flex;
+    margin: 4%;
+    justify-content: center;
+    align-items: center;
+}
+
+input{
+    width: 50%;
+    border-radius: 10px;
+    height: 2em;
+}
+
+#continue{
+    align-self: center;
+    width: 25%;
+    margin-bottom: 4%;
+}
+
+/*-----------restart button--------------*/
+.restart{
+    align-self: center;
+    width: 20%;
+    margin:2% 0;
+}
+
+/*-----hidden class----*/
+.hidden{
+    display: none;
+}
+
+/*---------------------Responsive-------------------------*/
+@media only screen and (max-width:1280px){
+    *{
+        font-size: 16px;
+    }
+}
+
+@media only screen and (max-width:414px){
+    *{
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width:330px){
+    *{
+        font-size: 10px;
+    }
+}
+
 
