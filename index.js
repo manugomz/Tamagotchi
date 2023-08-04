@@ -1,24 +1,26 @@
 //------DOM manipulation----------
 
+const device = document.querySelector(".device");
 const buttonSleep = document.getElementById("button-sleep");
-const buttonPlay = document.getElementById("button-play");
+const buttonRun = document.getElementById("button-run");
 const buttonEat = document.getElementById("button-eat");
 const petImage = document.getElementById('image');
 const petMessage = document.getElementById('text');
 
 const petHunger = document.querySelector('.hunger-number');
 const petEnergy = document.querySelector('.energy-number');
+const energyBar = document.querySelector('.energy');
+const hungerBar = document.querySelector('.hunger');
 
 const petOptions = document.querySelectorAll('.pet-option');
 const continueBtn = document.getElementById('continue');
 
 const selectionWdw = document.querySelector(".selector-window");
-const device = document.querySelector(".device");
 const restartBtn = document.querySelector(".restart");
 const petNameInput = document.getElementById('pet-name');
 
 let energy = 100;
-let hunger = 0;
+let hunger = 100;
 let status;
 let petName = "";
 let petType = "";
@@ -43,7 +45,6 @@ continueBtn.addEventListener("click", () => {
   device.classList.remove("hidden");
   petImage.src = `assests/${petType}/${petType}-start.gif`;
   energy = 100;
-  hunger = 50;
 })
 
 //------------------------Restarting game----------------------------
@@ -51,14 +52,13 @@ continueBtn.addEventListener("click", () => {
 restartBtn.addEventListener("click", () => {
   selectionWdw.classList.remove("hidden");
   device.classList.add("hidden");
-  petMessage.textContent = "";
+  initialStatus();
 })
 
 //-----------------Pet declaration & functions--------------
 
 function initPet() {
 
-  let hunger = 100;
   let age = 0;
   petEnergy.textContent = energy;
   petHunger.textContent = hunger;
@@ -91,7 +91,7 @@ function initPet() {
         return energy;
       }
     },
-    play: function () {
+    run: function () {
       if (energy > 30) {
         petImage.src = `assests/${petType}/${petType}-run.gif`;
         petMessage.textContent = `${petName} is running`;
@@ -141,13 +141,26 @@ function initPet() {
 const myPet = initPet();
 
 buttonSleep.addEventListener('click', () => myPet.sleep());
-buttonPlay.addEventListener('click', () => myPet.play());
+buttonRun.addEventListener('click', () => myPet.run());
 buttonEat.addEventListener('click', () => myPet.eat());
 
 
 let timePass = setInterval(() => {
-  energy = energy - 1;
-  petEnergy.textContent = energy
+  if (energy && hunger>1){
+    energy = energy-1;
+    hunger = hunger - 0.5;
+    visualStats();
+  }else{
+    petImage.src = `assests/dead.png`;
+    energy=0;
+    hunger=0;
+    petMessage.textContent = `${petName} died :(`
+    visualStats();
+    buttonEat.disabled=true;
+    buttonSleep.disabled=true;
+    buttonRun.disabled=true;
+  }
+  
 }, 2000);
 
 let sleeping = setInterval(() => {
@@ -156,3 +169,18 @@ let sleeping = setInterval(() => {
 }, 1000);
 
 
+function initialStatus(){
+  petMessage.textContent = "";
+  energy=100;
+  hunger=100;
+  buttonEat.disabled=false;
+  buttonSleep.disabled=false;
+  buttonRun.disabled=false;
+}
+
+function visualStats(){
+  petEnergy.textContent = energy;
+  energyBar.style.width=`${energy}%`;
+  petHunger.textContent= Math.round(hunger);
+  hungerBar.style.width=`${hunger}%`;
+}
