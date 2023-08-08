@@ -227,7 +227,6 @@ input{
     align-self: center;
     width: 10em;
     margin-bottom: 4%;
-    padding: 2rem 2rem;
 }
 
 /*-----------restart button--------------*/
@@ -242,8 +241,6 @@ input{
 .hidden{
     display: none;
 }
-
-
 
 /*---------------------Responsive-------------------------*/
 @media only screen and (max-width:1280px){
