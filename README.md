@@ -10,4 +10,4 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="" alt="project-screenshot" width="400" height="400/">
+<img src="https://co.pinterest.com/pin/753578950173674783" alt="project-screenshot">
