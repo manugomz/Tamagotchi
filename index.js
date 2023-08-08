@@ -51,11 +51,14 @@ continueBtn.addEventListener("click", () => {
 
 //------------------------Restarting game----------------------------
 
-//! Add a confirmation window & making energy rise and lower smoothly
+//! Edit confirmation window
 restartBtn.addEventListener("click", () => {
-  selectionWdw.classList.remove("hidden");
-  device.classList.add("hidden");
-  initialStatus();
+  let confirmation = confirm("Are you sure you want to restart?");
+  if (confirmation) {
+    selectionWdw.classList.remove("hidden");
+    device.classList.add("hidden");
+    initialStatus();
+  }
 })
 
 //-----------------Pet declaration & functions--------------
@@ -207,10 +210,12 @@ function running() {
 
 function eating() {
   energyChange = setInterval(() => {
-    if (energy < 100 && hunger < 99) {
+    if (energy < 100 && hunger < 97) {
       energy = energy + 1;
       hunger = hunger + 3;
       visualStats();
+    } else if (energy === 100 && hunger < 100) {
+      hunger = hunger + 1;
     }
     else {
       petImage.src = `assests/${petType}/${petType}-start.gif`;
