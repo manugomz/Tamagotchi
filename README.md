@@ -10,4 +10,6 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="https://co.pinterest.com/pin/753578950173674783" alt="project-screenshot">
+<img src="https://i.pinimg.com/originals/97/b4/49/97b4496465b32667cae3b86bfb16ff91.png" alt="project-screenshot" width="432" height="400/">
+
+<img src="https://i.pinimg.com/originals/16/a5/e5/16a5e51105e26cc6b94bf30cabe5ccfb.png" alt="project-screenshot" width="300" height="400/">
